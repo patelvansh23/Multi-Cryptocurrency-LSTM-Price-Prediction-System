@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="text-center mb-4">Cryptocurrency Price Predictor</h1>
+        
+        <form method="post" action="/" class="mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Prediction Settings</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="crypto_choice" class="form-label">Select Cryptocurrency to Predict</label>
+                        <select class="form-select" id="crypto_choice" name="crypto_choice" required>
+                            <option value="BTC-USD">Bitcoin (BTC-USD)</option>
+                            <option value="ETH-USD">Ethereum (ETH-USD)</option>
+                            <option value="DOGE-USD">Dogecoin (DOGE-USD)</option>
+                        </select>
+                        <div class="form-text">Choose which cryptocurrency you want to predict</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="no_of_days" class="form-label">Number of Days to Predict</label>
+                        <input type="number" class="form-control" id="no_of_days" name="no_of_days" 
+                               min="1" max="100" value="10" required>
+                        <div class="form-text">Enter the number of days you want to predict (1-100)</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                        <i class="fas fa-chart-line"></i> Predict Prices
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
